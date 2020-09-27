@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 ## Step 1 - Creating SSL Certificate ##
-openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt
+#openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt
 
 ## Output ##
 # Country Name (2 letter code) [AU]:US
@@ -82,7 +82,6 @@ EOF
 
 ## Step 3 – Adjusting the Firewall##
 ufw allow 'Nginx Full'
-ufw delete allow 'Nginx HTTP'
 ufw enable
 
 ## Step 4 – Enabling the Changes in Nginx ##
